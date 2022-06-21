@@ -7,8 +7,35 @@
   <title>LeaderBoard</title>
 </head>
 <body>
-  <header>
-    <h1>Leaderboard</h1>
-  </header>
+  <main>
+    <header>
+      <h1>Leaderboard</h1>
+    </header>
+    <section class="flex main-section">
+      <div class="flex flex-column left-col">
+        <div class="flex space-btn title">
+          <h2>Recent Scores</h2>
+          <a href="" class="refresh-btn">Refresh</a>
+        </div>
+        <div class="list-container">
+          <ul class="scores-list">
+            <li class="list-item">Name: 40</li>
+            <li class="list-item">Name: 40</li>
+            <li class="list-item">Name: 40</li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="title">
+          <h2>Add your score</h2>
+        </div>
+        <form>
+          <input type="text" class="input-width" id="your_name" placeholder="Your name" required><br>
+          <input type="number" class="input-width" id="your_score" placeholder="Your score" required><br>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
