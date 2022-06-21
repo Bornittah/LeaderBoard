@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,14 +25,15 @@ main {
 }
 
 header {
-  margin: 12px
+  margin: 12px;
 }
 
 .main-section {
   margin: 0 8px;
 }
 
-.right-col, .left-col {
+.right-col, 
+.left-col {
   flex: 1;
   margin: 18px;
 }
@@ -64,7 +65,8 @@ form {
   width: 70%;
 }
 
-form input, button {
+form input, 
+button {
   padding: 6px;
   margin: 8px 0;
   outline: none;
@@ -83,6 +85,7 @@ form input, button {
   main {
     margin: 24px;
   }
+
   .main-section {
     flex-direction: column-reverse;
   }
