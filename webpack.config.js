@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: "[name].js",
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
   },
   optimization: {
     runtimeChunk: 'single',
@@ -26,6 +26,6 @@ module.exports = {
     ],
   },
   devServer: {
-    static: './dist'
+    static: './dist',
   },
 };
