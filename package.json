@@ -1,0 +1,27 @@
+{
+  "name": "leaderboard",
+  "version": "1.0.0",
+  "description": "The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved to the external Leaderboard API service. The project is setup with  webpack and ES6 features",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bornittah/LeaderBoard.git"
+  },
+  "author": "Agasha Bornittah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bornittah/LeaderBoard/issues"
+  },
+  "homepage": "https://github.com/Bornittah/LeaderBoard#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.73.0"
+  }
+}
