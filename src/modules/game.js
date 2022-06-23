@@ -63,7 +63,7 @@ export const displayScores = (list) => {
     str = '<li class="list-item">No scores</li>';
   } else {
     list.forEach((game) => {
-      str += `<li class="list-item">${game.user}: ${game.score}</li>`;
+      str += `<li class="list-item">${game.user}: <span>${game.score}</span></li><hr>`;
     });
     document.querySelector('.scores-list').innerHTML = str;
   }

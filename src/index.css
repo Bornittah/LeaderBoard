@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Poppins:wght@200&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeeee79;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .flex {
@@ -28,6 +35,10 @@ header {
   margin: 12px;
 }
 
+header h1 {
+  color: #ff9203fd;
+}
+
 .main-section {
   margin: 0 8px;
 }
@@ -44,9 +55,10 @@ header {
 
 .refresh-btn {
   text-decoration: none;
-  color: inherit;
   padding: 6px;
-  border: 1px solid black;
+  background-color: #ff9203fd;
+  color: #ffff;
+  font-weight: 700;
 }
 
 .list-container {
@@ -58,7 +70,11 @@ header {
 }
 
 .list-item {
-  margin: 8px;
+  margin: 12px;
+}
+
+.list-item span {
+  margin-left: 12px;
 }
 
 form {
@@ -67,9 +83,10 @@ form {
 
 form input,
 button {
-  padding: 6px;
+  padding: 12px;
   margin: 8px 0;
   outline: none;
+  border: 0.3px solid #ff9203fd;
 }
 
 .input-width {
@@ -79,6 +96,17 @@ button {
 .submit-btn {
   width: 100px;
   float: right;
+  background-color: #ff9203fd;
+  color: #ffff;
+  font-weight: 700;
+  border: none;
+}
+
+.submit-btn:hover,
+.refresh-btn:hover {
+  background-color: #f5be08fd;
+  color: #ffff;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {

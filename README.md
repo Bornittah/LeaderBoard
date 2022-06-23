@@ -2,7 +2,7 @@
 The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved to the external Leaderboard API service. The project is setup with  webpack and ES6 features
  
  # Delopyment
- No online version
+ Click [here](https://bornittah.github.io/LeaderBoard/) to checkout the demo
 
  # Built With
 - Languages - HTML, CSS and ES6 Javascript
