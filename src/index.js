@@ -1,19 +1,19 @@
 import './index.css';
-import {gameId, addScores, showScoresToUI} from './modules/game.js';
+import { gameId, addScores, showScoresToUI } from './modules/game.js';
 
 const name = document.querySelector('#your_name');
 const score = document.querySelector('#your_score');
-const submit_btn = document.querySelector('#submit');
+const submitBtn = document.querySelector('#submit');
 const refresh = document.querySelector('.refresh-btn');
-const gameName = { name: 'Scoccer'};
-let scores = [];
+const gameName = { name: 'Scoccer' };
+const scores = [];
 
-submit_btn.addEventListener('click', async(e) => {
+submitBtn.addEventListener('click', async (e) => {
   e.preventDefault();
   const game = {
     user: name.value,
-    score: score.value
-  }
+    score: score.value,
+  };
   const id = await gameId(gameName);
   await addScores(id, game);
   await showScoresToUI(scores);
@@ -21,11 +21,11 @@ submit_btn.addEventListener('click', async(e) => {
   score.value = '';
 });
 
-refresh.addEventListener('click', async() => {
+refresh.addEventListener('click', async () => {
   await showScoresToUI(scores);
 });
 
-window.addEventListener('DOMContentLoaded', async(event) => {
+window.addEventListener('DOMContentLoaded', async (event) => {
   event.preventDefault();
   await showScoresToUI(scores);
 });
