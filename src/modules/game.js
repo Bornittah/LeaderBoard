@@ -1,11 +1,11 @@
 export const API = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
-export const gameId = async(gameName) => {
+export const gameId = async (gameName) => {
   const response = await fetch(`${API}/games/`,
     {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(gameName),
     });
@@ -17,16 +17,14 @@ export const gameId = async(gameName) => {
       const key = localStorage.getItem('leaderBoard');
       if(key === null){
         localStorage.setItem('leaderBoard', id1);
-        const new_key = localStorage.getItem('leaderBoard');
-        return new_key;
+        const newKey = localStorage.getItem('leaderBoard');
+        return newKey;
       }
     }
     return key;
   })
-  .catch((err) => {
-    return err;
-  });
-  return id;
+    .catch((err) => { return err; });
+    return id;
 }
 
 export const addScores = async (id, data) => {
@@ -34,7 +32,7 @@ export const addScores = async (id, data) => {
     {
       method: 'POST',
       headers: {
-        'Content-Type': "application/json"
+        'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
     });
@@ -44,10 +42,8 @@ export const addScores = async (id, data) => {
       return data.result;
     }
     })
-    .catch((err) => {
-          return err;
-        });
-  return user;
+    .catch((err) => { return err; });
+    return user;
 }
 
 export const fetchScores = async (id) => {
@@ -55,37 +51,35 @@ export const fetchScores = async (id) => {
   {
     method: 'GET',
     headers: {
-      'Content-Type': "application/json"
+      'Content-Type': 'application/json',
    }
   });
 
   const games = response.json().then((data) => {
     return data.result;
     })
-    .catch((err) => {
-      return err;
-    });
-  return games;
-}
+    .catch((err) => { return err; });
+    return games;
+};
 
 export const displayScores = (list) => {
   let str = '';
   if(list === null) {
-    str = `<li class="list-item">No scores</li>`;
-  }else {
+    str = '<li class="list-item">No scores</li>';
+  } else {
     list.forEach((game) => {
       str += `<li class="list-item">${game.user}: ${game.score}</li>`;
     });
     document.querySelector('.scores-list').innerHTML = str;
   }
-}
+};
 
 export const showScoresToUI = async (scores) => {
   const key = localStorage.getItem('leaderBoard');
   if(key === null) {
     displayScores(scores);
-  }else {
+  } else {
     scores = await fetchScores(key);
     displayScores(scores);
   }
-}
+};
