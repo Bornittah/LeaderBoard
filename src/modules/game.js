@@ -37,11 +37,7 @@ export const addScores = async (id, data) => {
       body: JSON.stringify(data),
     });
 
-  const user = response.json().then((data) => {
-    if (response.status === 201) {
-      return data.result;
-    }
-    })
+  const user = response.json().then((data) => data.result)
     .catch((err) => err);
   return user;
 };
@@ -52,12 +48,12 @@ export const fetchScores = async (id) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-    }
+      },
     });
 
   const games = response.json().then((data) => data.result)
     .catch((err) => err);
-    return games;
+  return games;
 };
 
 export const displayScores = (list) => {
