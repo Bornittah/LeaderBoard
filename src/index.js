@@ -16,7 +16,6 @@ submitBtn.addEventListener('click', async (e) => {
   };
   const id = await gameId(gameName);
   await addScores(id, game);
-  await showScoresToUI(scores);
   name.value = '';
   score.value = '';
 });
