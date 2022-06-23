@@ -11,21 +11,21 @@ export const gameId = async (gameName) => {
     });
 
   const id = response.json().then((data) => {
-    if(response.status === 201){
-      const result = data.result.split(" ");
+    if(response.status === 201) {
+      const result = data.result.split(' ');
       const id1 = result[3];
       const key = localStorage.getItem('leaderBoard');
-      if(key === null){
+      if(key === null) {
         localStorage.setItem('leaderBoard', id1);
         const newKey = localStorage.getItem('leaderBoard');
         return newKey;
       }
     }
-    return key;
+    return data;
   })
-    .catch((err) => { return err; });
-    return id;
-}
+    .catch((err => {return err; }));
+  return id;
+};
 
 export const addScores = async (id, data) => {
   const response = await fetch(`${API}/games/${id}/scores/`,
@@ -33,32 +33,30 @@ export const addScores = async (id, data) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
+      },
+      body: JSON.stringify(data),
     });
 
   const user = response.json().then((data) => {
-    if(response.status === 201){
+    if(response.status === 201) {
       return data.result;
     }
     })
-    .catch((err) => { return err; });
-    return user;
-}
+    .catch((err => { return err; }));
+  return user;
+};
 
 export const fetchScores = async (id) => {
   const response = await fetch(`${API}/games/${id}/scores/`,
-  {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-   }
-  });
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+    }
+    });
 
-  const games = response.json().then((data) => {
-    return data.result;
-    })
-    .catch((err) => { return err; });
+  const games = response.json().then((data =>  {return data.result}))
+    .catch((err => { return err; }));
     return games;
 };
 
