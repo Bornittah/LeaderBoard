@@ -19,7 +19,7 @@ export const gameId = async (gameName) => {
         localStorage.setItem('leaderBoard', id1);
         const newKey = localStorage.getItem('leaderBoard');
         return newKey;
-      } 
+      }
       return key;
     }
     return data;
